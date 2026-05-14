@@ -16,7 +16,7 @@ router.post("/analyze", async (req, res): Promise<void> => {
   const { text } = parsed.data;
 
   // Gunakan gemini-1.5-flash: stabil, cepat, dan kuota gratis lebih besar
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
 
   const prompt = `Kamu adalah seorang psikolog forensik dan ahli analisis komunikasi. Analisis teks percakapan atau pesan berikut dan berikan penilaian psikologis yang mendalam.
 
