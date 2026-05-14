@@ -141,7 +141,7 @@ export function AppSidebar({
               <Activity className="w-4 h-4 text-primary" />
             </div>
             <span className="font-semibold text-white text-sm tracking-tight">
-              CharacterAI
+              MindGuard AI
             </span>
           </div>
 
@@ -189,7 +189,7 @@ export function AppSidebar({
             // Tampilkan pesan kosong jika belum ada sesi
             <div className="flex flex-col items-center justify-center h-32 gap-2 text-white/25">
               <MessageSquare className="w-8 h-8" />
-              <p className="text-xs">Belum ada sesi</p>
+              <p className="text-xs">Not have Session</p>
             </div>
           ) : (
             /* Render setiap sesi sebagai item yang bisa diklik */
