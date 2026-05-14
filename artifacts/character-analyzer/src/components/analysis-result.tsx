@@ -54,15 +54,15 @@ function CopyButton({ text, label }: { text: string; label?: string }) {
       setTimeout(() => setCopied(false), 2000);
 
       toast({
-        title: "Tersalin!",
-        description: label ? `${label} berhasil disalin ke clipboard.` : "Teks disalin ke clipboard.",
+        title: "Copied!",
+        description: label ? `${label} successfully copied to clipboard.` : "Text copied to clipboard.",
         duration: 2000,
       });
     } catch {
       // Jika Clipboard API tidak tersedia, tampilkan pesan error
       toast({
-        title: "Gagal menyalin",
-        description: "Browser tidak mendukung akses clipboard.",
+        title: "Copy failed",
+        description: "Browser does not support clipboard access.",
         variant: "destructive",
       });
     }
