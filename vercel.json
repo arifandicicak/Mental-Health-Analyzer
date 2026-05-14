@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/artifacts/character-analyzer/index.ts"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/artifacts/character-analyzer/dist/public/$1"
+    }
+  ]
+}
+
