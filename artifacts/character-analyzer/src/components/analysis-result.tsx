@@ -139,7 +139,7 @@ export function AnalysisResultView({ result }: AnalysisResultProps) {
       >
         <Fingerprint className="w-4 h-4 text-muted-foreground" />
         <h2 className="text-base font-semibold text-foreground">
-          Hasil Analisis
+          Analysis Results
         </h2>
       </motion.div>
 
@@ -153,7 +153,7 @@ export function AnalysisResultView({ result }: AnalysisResultProps) {
             <CardHeader className="pb-3 bg-muted/30 flex-row items-center justify-between space-y-0">
               <CardTitle className="text-xs font-medium text-muted-foreground flex items-center gap-2">
                 <ShieldAlert className="w-3.5 h-3.5" />
-                Status Toksisitas
+                Toxicity Status
               </CardTitle>
               {/* Tombol salin hasil toksisitas */}
               <CopyButton
@@ -190,7 +190,7 @@ export function AnalysisResultView({ result }: AnalysisResultProps) {
             <CardHeader className="pb-3 bg-muted/30 flex-row items-center justify-between space-y-0">
               <CardTitle className="text-xs font-medium text-muted-foreground flex items-center gap-2">
                 <User className="w-3.5 h-3.5" />
-                Profil Kepribadian
+                Personality Profile
               </CardTitle>
               {/* Tombol salin profil kepribadian */}
               <CopyButton
@@ -229,7 +229,7 @@ export function AnalysisResultView({ result }: AnalysisResultProps) {
             <CardHeader className="pb-3 border-b border-border/20 flex-row items-center justify-between space-y-0">
               <CardTitle className="text-xs font-medium text-muted-foreground flex items-center gap-2">
                 <Flag className="w-3.5 h-3.5" />
-                Red Flag vs Green Flag Indikator
+                Red Flag vs Green Flag Indicator
               </CardTitle>
               {/* Tombol salin skor flag */}
               <CopyButton
