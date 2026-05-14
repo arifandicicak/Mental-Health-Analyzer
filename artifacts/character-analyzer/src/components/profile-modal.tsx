@@ -62,8 +62,8 @@ const certificates = [
     icon: Database,
   },
   {
-    title: "Android Developer Fundamentals",
-    issuer: "Dicoding Indonesia",
+    title: "Android Developer",
+    issuer: "Autodidak",
     year: "2025",
     icon: Smartphone,
   },
@@ -90,14 +90,14 @@ const projects = [
     description:
       "Game mobile genre action platformer 2D developed with GODOT ENGINE in SmartPhone",
     stack: ["Python", "GDScript", "C#"],
-    status: "Selesai",
+    status: "Finished",
   },
   {
     name: "ClassWeb",
     description:
       "A private class website created for class member introductions, class duty schedules.",
     stack: ["Vue.js", "D3.js", "Node.js", "MongoDB"],
-    status: "Selesai",
+    status: "Finished",
   },
 ];
 
