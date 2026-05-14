@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/artifacts/character-analyzer/index.ts"
+      "destination": "artifacts/api-server/src/routes/analyze/index.ts"
     },
     {
       "source": "/(.*)",
