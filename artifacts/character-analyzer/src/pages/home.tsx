@@ -141,8 +141,8 @@ export default function Home() {
     // Validasi minimal 10 karakter agar prompt ke Gemini tidak terlalu pendek
     if (!activeSession || activeSession.text.length < 10) {
       toast({
-        title: "Teks terlalu pendek",
-        description: "Masukkan minimal 10 karakter untuk analisis yang akurat.",
+        title: "Text is too short",
+        description: "Enter at least 10 characters for accurate analysis.",
         variant: "destructive",
       });
       return;
@@ -245,7 +245,7 @@ export default function Home() {
           <span className="text-sm font-medium text-foreground truncate flex-1 min-w-0">
             {activeSession?.title && activeSession.title !== "Sesi Baru"
               ? activeSession.title  // Tampilkan judul otomatis dari teks
-              : "CharacterAI"        // Fallback: nama app jika sesi masih kosong
+              : "MindGuardAI"        // Fallback: nama app jika sesi masih kosong
             }
           </span>
 
@@ -295,11 +295,12 @@ export default function Home() {
                     className="flex flex-col gap-1.5 overflow-hidden"
                   >
                     <h1 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">
-                      Forensik Karakter
+                      Character Forensics
                     </h1>
                     <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                      Paste percakapan, pesan, atau ketikan seseorang — AI akan
-                      menganalisis profil psikologis, gaya komunikasi, dan red flags.
+                      Paste someone's conversation, 
+                      message, or typing — AI will analyze their psychological profile, 
+                      communication style, and red flags.
                     </p>
                   </motion.div>
                 )}
@@ -349,7 +350,7 @@ export default function Home() {
                   )}
                   data-testid="text-char-count"
                 >
-                  {currentText.length} karakter
+                  {currentText.length} character
                   {/* Hint tambahan jika teks ada tapi masih kurang */}
                   {currentText.length > 0 && currentText.length < 10 && (
                     <span className="ml-1 opacity-70">(min. 10)</span>
@@ -371,13 +372,13 @@ export default function Home() {
                     // State loading: spinner berputar
                     <span className="flex items-center gap-2">
                       <Activity className="w-3.5 h-3.5 animate-spin" />
-                      Menganalisis...
+                      Analyzing...
                     </span>
                   ) : (
                     // State normal: ikon search + teks
                     <span className="flex items-center gap-2">
                       <Search className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
-                      Analisis Karakter
+                      Character Analysis
                     </span>
                   )}
                 </Button>
@@ -403,7 +404,7 @@ export default function Home() {
                   {/* Label proses dengan ikon berkedip */}
                   <div className="flex items-center gap-2 text-primary text-sm font-medium">
                     <Activity className="w-4 h-4 animate-pulse" />
-                    Gemini AI sedang menganalisis psikologi teks...
+                    MindGuard AI is analyzing the psychology of text...
                   </div>
 
                   {/* Placeholder kartu berbentuk abu-abu berkedip */}
@@ -449,11 +450,11 @@ export default function Home() {
                 </div>
                 {/* Teks petunjuk */}
                 <p className="text-sm text-muted-foreground/60 max-w-xs leading-relaxed">
-                  Paste teks di atas, lalu klik{" "}
+                  Paste the text above, then click{" "}
                   <span className="font-medium text-foreground/50">
-                    Analisis Karakter
+                    Character Analysis
                   </span>{" "}
-                  untuk mendapatkan insight psikologis mendalam dari Gemini AI.
+                  to gain deep psychological insights from MindGuard AI.
                 </p>
               </motion.div>
             )}
