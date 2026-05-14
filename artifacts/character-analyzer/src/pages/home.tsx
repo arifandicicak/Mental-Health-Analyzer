@@ -161,10 +161,10 @@ export default function Home() {
         onError: (error) => {
           // Tampilkan pesan error dari API (atau fallback generic)
           toast({
-            title: "Analisis Gagal",
+            title: "Analysis Failed",
             description:
               (error as { error?: string })?.error ??
-              "Terjadi kesalahan. Periksa API key dan coba lagi.",
+              "An error occurred. Check your Internet/API and try again..",
             variant: "destructive",
           });
         },
@@ -243,7 +243,7 @@ export default function Home() {
 
           {/* Judul sesi aktif — terpotong jika terlalu panjang */}
           <span className="text-sm font-medium text-foreground truncate flex-1 min-w-0">
-            {activeSession?.title && activeSession.title !== "Sesi Baru"
+            {activeSession?.title && activeSession.title !== "New Session"
               ? activeSession.title  // Tampilkan judul otomatis dari teks
               : "MindGuardAI"        // Fallback: nama app jika sesi masih kosong
             }
@@ -282,7 +282,7 @@ export default function Home() {
             {/* ── Seksi input teks ──────────────────────────────────────────
                 Judul halaman (hanya muncul jika belum ada hasil) + textarea + tombol.
             ──────────────────────────────────────────────────────────────── */}
-            <section className="flex flex-col gap-5" aria-label="Input teks analisis">
+            <section className="flex flex-col gap-5" aria-label="Input text analysis">
 
               {/* Judul dan deskripsi — disembunyikan saat ada hasil untuk menghemat ruang */}
               <AnimatePresence>
@@ -315,7 +315,7 @@ export default function Home() {
 
                 {/* Textarea utama */}
                 <Textarea
-                  placeholder="Paste percakapan atau ketikan seseorang di sini..."
+                  placeholder="Paste someone's conversation or typing here..."
                   className="
                     min-h-[180px] sm:min-h-[200px] resize-y
                     text-sm sm:text-base leading-relaxed
@@ -331,7 +331,7 @@ export default function Home() {
                   onChange={handleTextChange}
                   disabled={isPending}   // Kunci textarea saat API sedang diproses
                   data-testid="input-text-analysis"
-                  aria-label="Teks untuk dianalisis"
+                  aria-label="Text to be analyzed"
                 />
               </div>
 
@@ -366,7 +366,7 @@ export default function Home() {
                   }
                   className="h-10 px-6 rounded-full shadow-sm hover:shadow-md transition-all duration-200 font-medium text-sm group shrink-0"
                   data-testid="button-analyze"
-                  aria-label="Mulai analisis karakter"
+                  aria-label="Start character analysis"
                 >
                   {isPending ? (
                     // State loading: spinner berputar
@@ -399,7 +399,7 @@ export default function Home() {
                   transition={{ duration: 0.2 }}
                   className="flex flex-col gap-5"
                   aria-live="polite"
-                  aria-label="Sedang menganalisis..."
+                  aria-label="Analyzing..."
                 >
                   {/* Label proses dengan ikon berkedip */}
                   <div className="flex items-center gap-2 text-primary text-sm font-medium">
@@ -442,7 +442,7 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className="flex flex-col items-center gap-3 py-8 text-center"
-                aria-label="Petunjuk penggunaan"
+                aria-label="Instructions for use"
               >
                 {/* Lingkaran dekoratif dengan ikon */}
                 <div className="w-12 h-12 rounded-2xl bg-muted/80 flex items-center justify-center">
