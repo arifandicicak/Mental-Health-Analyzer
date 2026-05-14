@@ -7,7 +7,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/artifacts/character-analyzer/index.html"
+      "destination": "/artifacts/character-analyzer/dist/$1"
     }
   ]
 }
