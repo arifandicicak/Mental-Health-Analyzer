@@ -6,7 +6,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/artifacts/character-analyzer/dist/public/$1"
+      "destination": "/artifacts/character-analyzer/public/$1"
     }
   ]
 }
