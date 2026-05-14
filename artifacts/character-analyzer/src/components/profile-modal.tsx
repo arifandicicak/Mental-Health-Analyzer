@@ -38,15 +38,15 @@ interface ProfileModalProps {
 // ─── Data sertifikat ─────────────────────────────────────────────────────────
 const certificates = [
   {
-    title: "Google IT Support Professional Certificate",
-    issuer: "Google / Coursera",
-    year: "2023",
+    title: "Ai Engineer Certificate",
+    issuer: "Dicoding Indonesia",
+    year: "2025",
     icon: Shield,
   },
   {
-    title: "Python for Everybody Specialization",
-    issuer: "University of Michigan / Coursera",
-    year: "2023",
+    title: "Deep Learning Fundamental",
+    issuer: "Dicoding Indonesia",
+    year: "2025",
     icon: Code2,
   },
   {
@@ -56,15 +56,15 @@ const certificates = [
     icon: Brain,
   },
   {
-    title: "Back-End Developer",
+    title: "AI Development with Python",
     issuer: "Dicoding Indonesia",
-    year: "2024",
+    year: "2025",
     icon: Database,
   },
   {
     title: "Android Developer Fundamentals",
     issuer: "Dicoding Indonesia",
-    year: "2023",
+    year: "2025",
     icon: Smartphone,
   },
 ];
@@ -72,30 +72,30 @@ const certificates = [
 // ─── Data proyek ─────────────────────────────────────────────────────────────
 const projects = [
   {
-    name: "CharacterAI",
+    name: "MindGuard AI",
     description:
       "Aplikasi web analisis karakter & kesehatan mental berbasis Gemini AI. Mendeteksi toxicity, profil kepribadian, dan red/green flags dari teks percakapan.",
     stack: ["React", "TypeScript", "Gemini AI", "Express"],
     status: "Live",
   },
   {
-    name: "JangrikChat",
+    name: "Jangkrik AI",
     description:
-      "Platform chat real-time dengan end-to-end encryption, notifikasi push, dan dukungan multi-device.",
-    stack: ["Next.js", "Socket.io", "PostgreSQL", "Redis"],
+      "Platform chat real-time with Ai, Arifandi Tanggahma Portfolio, and introducing to Arifandi.",
+    stack: ["Next.js", "TypeScript", "CSS", "Gemini AI"],
     status: "Development",
   },
   {
-    name: "AgroScan",
+    name: "Mala",
     description:
-      "Aplikasi mobile untuk deteksi penyakit tanaman menggunakan computer vision dan model CNN custom.",
-    stack: ["Python", "TensorFlow", "Flutter", "FastAPI"],
+      "Game mobile genre action platformer 2D developed with GODOT ENGINE in SmartPhone",
+    stack: ["Python", "GDScript", "C#"],
     status: "Selesai",
   },
   {
-    name: "DataSentinel",
+    name: "ClassWeb",
     description:
-      "Dashboard monitoring keamanan jaringan dengan visualisasi real-time dan sistem alerting otomatis.",
+      "A private class website created for class member introductions, class duty schedules.",
     stack: ["Vue.js", "D3.js", "Node.js", "MongoDB"],
     status: "Selesai",
   },
@@ -167,14 +167,17 @@ export function ProfileModal({ open, onClose }: ProfileModalProps) {
               {/* Lokasi */}
               <div className="flex items-center gap-1.5 text-muted-foreground text-sm mt-1">
                 <MapPin className="w-3.5 h-3.5" />
-                <span>Indonesia</span>
+                <span>Fak-Fak, Papua Barat, Indonesia</span>
               </div>
 
               {/* Bio singkat */}
               <p className="text-sm text-muted-foreground mt-3 leading-relaxed max-w-sm">
-                Full-stack developer & AI enthusiast. Suka membangun tools yang
-                memecahkan masalah nyata. Tertarik pada keamanan siber, machine
-                learning, dan pengembangan aplikasi mobile.
+                Jangkrik or Arifandi Tanggahma is an ordinary school kid in SMA NEGERI 1 FAKFAK who really likes coding, 
+                interested in coding, Arifandi Tanggahma create websites, 
+                Ai and games just with a smartphone, 
+                Arif has made his own game: Indie Game Titled Mala on itch.io , 
+                class website, and get various certificates from dicoding, AI Enthusiast, 
+                Arifandi Tanggahma is proof that the greatest power comes from the brain, not from the tools you have.
               </p>
 
               {/* Link eksternal */}
@@ -208,7 +211,7 @@ export function ProfileModal({ open, onClose }: ProfileModalProps) {
             {/* Judul seksi */}
             <div className="flex items-center gap-2 mb-4">
               <Award className="w-4 h-4 text-primary" />
-              <h3 className="font-semibold text-foreground">Sertifikat</h3>
+              <h3 className="font-semibold text-foreground">Certificate</h3>
             </div>
 
             {/* Daftar sertifikat */}
@@ -255,7 +258,7 @@ export function ProfileModal({ open, onClose }: ProfileModalProps) {
             {/* Judul seksi */}
             <div className="flex items-center gap-2 mb-4">
               <Briefcase className="w-4 h-4 text-primary" />
-              <h3 className="font-semibold text-foreground">Proyek</h3>
+              <h3 className="font-semibold text-foreground">Project</h3>
             </div>
 
             {/* Grid proyek — 1 kolom di mobile, 2 di desktop */}
@@ -309,7 +312,7 @@ export function ProfileModal({ open, onClose }: ProfileModalProps) {
 
           {/* ── Footer modal ─────────────────────────────────────────────── */}
           <div className="text-center text-xs text-muted-foreground pb-2">
-            Dibuat dengan penuh semangat oleh Arifandi Tanggahma · 2024
+            © 2026 Developed With Heart by Arifandi Tanggahma. powered by Gemini AI
           </div>
         </div>
       </DialogContent>
