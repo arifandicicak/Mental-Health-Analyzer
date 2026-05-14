@@ -5,17 +5,6 @@
  * API specification for Character & Mental Health Analyzer
  * OpenAPI spec version: 0.1.0
  */
-export interface HealthStatus {
-  status: string;
-}
-
-export interface AnalysisInput {
-  /**
-   * The conversation or text to analyze
-   * @minLength 10
-   */
-  text: string;
-}
 
 export interface AnalysisResult {
   /** Whether the text contains toxic/bullying content */
@@ -44,8 +33,4 @@ export interface AnalysisResult {
   mentalHealthInsight: string;
   /** Short label for the communication style e.g. "Agresif", "Asertif", "Pasif" */
   communicationStyle: string;
-}
-
-export interface ApiError {
-  error: string;
 }

@@ -3,13 +3,15 @@ info:
   # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: API specification for Character & Mental Health Analyzer
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: analyze
+    description: Text analysis operations
 paths:
   /healthz:
     get:
@@ -24,6 +26,37 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /analyze:
+    post:
+      operationId: analyzeText
+      tags: [analyze]
+      summary: Analyze text for character and mental health insights
+      description: Processes input text through Gemini AI to detect toxicity, personality profile, red/green flags, and mental health insights
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AnalysisInput"
+      responses:
+        "200":
+          description: Analysis result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AnalysisResult"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +66,63 @@ components:
           type: string
       required:
         - status
-
+    AnalysisInput:
+      type: object
+      required:
+        - text
+      properties:
+        text:
+          type: string
+          minLength: 10
+          description: The conversation or text to analyze
+    AnalysisResult:
+      type: object
+      required:
+        - isToxic
+        - toxicityLabel
+        - toxicitySummary
+        - personalityType
+        - personalityDescription
+        - redFlagScore
+        - greenFlagScore
+        - mentalHealthInsight
+        - communicationStyle
+      properties:
+        isToxic:
+          type: boolean
+          description: Whether the text contains toxic/bullying content
+        toxicityLabel:
+          type: string
+          description: Short label e.g. "Toxic", "Aman", "Perlu Perhatian"
+        toxicitySummary:
+          type: string
+          description: Brief explanation of the toxicity assessment
+        personalityType:
+          type: string
+          description: Personality type label e.g. "Dominan", "Pasif-Agresif", "Empatis", "Narsistik"
+        personalityDescription:
+          type: string
+          description: Detailed explanation of the personality type based on typing patterns
+        redFlagScore:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: Percentage score 0-100 indicating red flag tendency
+        greenFlagScore:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: Percentage score 0-100 indicating green flag tendency
+        mentalHealthInsight:
+          type: string
+          description: Advice on how to handle someone with this typing/communication style
+        communicationStyle:
+          type: string
+          description: Short label for the communication style e.g. "Agresif", "Asertif", "Pasif"
+    ApiError:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: string
